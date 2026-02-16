@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
+
+  --color-void: #000000;
+  --color-paper: #ffffff;
+  --color-concrete: #111111;
+  --color-steel: #333333;
+  --color-accent: #ff3333; /* Critical Alert Red */
+  --color-success: #00ff00; /* Terminal Green */
+  
+  --spacing-swiss: 1rem; /* Base unit */
+  --tracking-tight: -0.04em; /* Tight Swiss tracking */
+}
+
+/* Base Reset */
+:root {
+  --background: var(--color-void);
+  --foreground: var(--color-paper);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "ss02", "cv01", "cv02"; /* Inter features */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Utilities */
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility tracking-swiss {
+  letter-spacing: var(--tracking-tight);
+}
+
+@utility mask-radial-fade {
+  mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+}
+
+/* Brutalist Borders */
+@utility border-swiss {
+  border: 1px solid var(--color-steel);
+}
+
+/* Grid Layout Helper */
+@utility grid-swiss {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--spacing-swiss);
+}
+
+/* Selection */
+::selection {
+  background: var(--color-paper);
+  color: var(--color-void);
+}
