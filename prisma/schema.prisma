@@ -1,0 +1,49 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+}
+
+model WaitlistEntry {
+  id        String   @id @default(uuid())
+  email     String
+  product   String   // "shiplog", "armourmail", etc.
+  source    String?  // "reddit", "hn", "direct", "arena"
+  referrer  String?  // UTM or referral source
+  createdAt DateTime @default(now())
+
+  @@unique([email, product])
+  @@index([product])
+}
+
+model ArenaIdea {
+  id          String   @id @default(uuid())
+  slug        String   @unique
+  title       String
+  tagline     String
+  status      String   @default("active") // "active", "passed", "failed", "graduated"
+  painQuotes  Json     // Changed to Json for Postgres compatibility (mapped to JSONB)
+  valueProp   String?  // The "How it works" or main value proposition text
+  sprintStart DateTime?
+  sprintEnd   DateTime?
+  signupCount Int      @default(0)
+  signupGoal  Int      @default(10) // Minimum to pass
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model TrackingEvent {
+  id        String   @id @default(uuid())
+  product   String
+  event     String   // "page_view", "cta_click", "waitlist_signup", "share"
+  metadata  Json?    // Changed to Json
+  createdAt DateTime @default(now())
+
+  @@index([product, event])
+  @@index([createdAt])
+}

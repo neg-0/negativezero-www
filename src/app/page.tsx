@@ -14,12 +14,12 @@ export default function Home() {
       opacity: 1,
       transition: { staggerChildren: 0.1 }
     }
-  };
+  } as any;
 
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 50 } }
-  };
+  } as any;
 
   return (
     <main className="min-h-screen relative bg-black text-white selection:bg-white selection:text-black font-mono overflow-x-hidden">
