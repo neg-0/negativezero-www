@@ -19,7 +19,7 @@ export default function TrenchTalkPage() {
       </nav>
 
       {/* Hero Section */}
-      <header className="relative pt-32 pb-20 px-4 overflow-hidden border-b border-white/5">
+      <header className="relative pt-32 pb-20 px-4 overflow-hidden border-b border-white/20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(249,115,22,0.08),transparent_50%)] pointer-events-none" />
         <div className="container mx-auto max-w-5xl">
           <div className="mb-8 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-medium uppercase tracking-wider">
@@ -32,13 +32,13 @@ export default function TrenchTalkPage() {
             <span className="text-orange-500 underline decoration-orange-500/30 decoration-8 underline-offset-8 font-black">WITH FAT THUMBS.</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-slate-400 max-w-2xl mb-10 leading-relaxed font-light">
+          <p className="text-xl md:text-2xl text-slate-300 max-w-2xl mb-10 leading-relaxed font-light">
             You’re a Superintendent, not a data entry clerk. Turn jobsite rants into professional RFIs and Daily Logs before you even leave the trailer.
           </p>
 
           <div className="flex flex-col gap-6">
             <WaitlistForm product={slug} />
-            <p className="text-xs text-slate-500 font-mono italic">
+            <p className="text-xs text-slate-300 font-mono italic">
               "Finally, an AI that knows what a 'Grade Beam' is."
             </p>
           </div>
@@ -46,14 +46,14 @@ export default function TrenchTalkPage() {
       </header>
 
       {/* The Pain Section */}
-      <section className="py-24 px-4 border-b border-white/5">
+      <section className="py-24 px-4 border-b border-white/20">
         <div className="container mx-auto max-w-5xl">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl font-bold text-white mb-6 tracking-tight leading-tight uppercase italic">
                 The "6 PM Shadow Shift" is Killing Your Weekends.
               </h2>
-              <p className="text-lg text-slate-400 mb-8 leading-relaxed">
+              <p className="text-lg text-slate-300 mb-8 leading-relaxed">
                 Field work is constant. Fires are everywhere. By the time you sit down to document the day, it's dark out and you're exhausted. 
                 Typing technical specs on a cracked phone screen isn't just slow—it's how mistakes happen.
               </p>
@@ -81,7 +81,7 @@ export default function TrenchTalkPage() {
                 <blockquote className="text-xl italic text-slate-300 leading-snug">
                   "Everyone will tell you that the paperwork should be done during the work day. It's almost impossible..."
                 </blockquote>
-                <div className="mt-4 text-sm text-slate-500 font-mono">
+                <div className="mt-4 text-sm text-slate-300 font-mono">
                   — r/Construction
                 </div>
               </div>
@@ -93,7 +93,7 @@ export default function TrenchTalkPage() {
                 <blockquote className="text-xl italic text-slate-300 leading-snug">
                   "I spend my entire Sunday doing daily logs because I'm too busy putting out fires during the week."
                 </blockquote>
-                <div className="mt-4 text-sm text-slate-500 font-mono">
+                <div className="mt-4 text-sm text-slate-300 font-mono">
                   — Project Superintendent
                 </div>
               </div>
@@ -103,14 +103,14 @@ export default function TrenchTalkPage() {
       </section>
 
       {/* Comparison Section */}
-      <section className="py-24 px-4 bg-white/[0.01] border-b border-white/5">
+      <section className="py-24 px-4 bg-white/[0.01] border-b border-white/20">
         <div className="container mx-auto max-w-5xl">
           <h2 className="text-4xl font-bold text-white mb-16 text-center uppercase tracking-tighter italic">Why Trench Talk Wins.</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-8 border border-white/5 bg-black/20 rounded-xl">
-              <h3 className="text-slate-500 font-bold mb-4 uppercase text-sm tracking-widest">Generic Dictation</h3>
+            <div className="p-8 border border-white/20 bg-black/20 rounded-xl">
+              <h3 className="text-slate-300 font-bold mb-4 uppercase text-sm tracking-widest">Generic Dictation</h3>
               <p className="text-white text-xl mb-4 font-bold">"Siri-ously?"</p>
-              <p className="text-slate-400 text-sm font-light leading-relaxed">
+              <p className="text-slate-300 text-sm font-light leading-relaxed">
                 Auto-correct turns "CMU Wall" into "See me wall". Terrible at jargon, zero formatting, and no PDF export.
               </p>
             </div>
@@ -122,10 +122,10 @@ export default function TrenchTalkPage() {
                 The only AI that speaks construction. Turn rough voice notes into formal RFIs instantly. Designed for the field.
               </p>
             </div>
-            <div className="p-8 border border-white/5 bg-black/20 rounded-xl">
-              <h3 className="text-slate-500 font-bold mb-4 uppercase text-sm tracking-widest">Heavy CM Software</h3>
+            <div className="p-8 border border-white/20 bg-black/20 rounded-xl">
+              <h3 className="text-slate-300 font-bold mb-4 uppercase text-sm tracking-widest">Heavy CM Software</h3>
               <p className="text-white text-xl mb-4 font-bold">Desk Bound</p>
-              <p className="text-slate-400 text-sm font-light leading-relaxed">
+              <p className="text-slate-300 text-sm font-light leading-relaxed">
                 Requires sitting at a desk and clicking 50 buttons. Great for office admins, nightmare for people in boots.
               </p>
             </div>
@@ -137,7 +137,7 @@ export default function TrenchTalkPage() {
       <section className="py-24 px-4 bg-white/[0.01]">
         <div className="container mx-auto max-w-5xl text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4 uppercase italic tracking-tighter">Built for the Field.</h2>
-          <p className="text-slate-400 italic font-mono uppercase text-sm">Hard Hats Required.</p>
+          <p className="text-slate-300 italic font-mono uppercase text-sm">Hard Hats Required.</p>
         </div>
         
         <div className="container mx-auto max-w-5xl grid md:grid-cols-3 gap-8">
@@ -158,10 +158,10 @@ export default function TrenchTalkPage() {
               desc: "Don't let verbal changes haunt you. Document site conditions instantly with voice-stamped proof."
             }
           ].map((f, i) => (
-            <div key={i} className="p-8 border border-white/5 bg-black/40 hover:border-orange-400/30 transition-all group hover:-translate-y-1">
+            <div key={i} className="p-8 border border-white/20 bg-black/40 hover:border-orange-400/30 transition-all group hover:-translate-y-1">
               <div className="mb-6 group-hover:scale-110 transition-transform">{f.icon}</div>
               <h3 className="text-xl font-bold text-white mb-3 uppercase tracking-tight">{f.title}</h3>
-              <p className="text-slate-400 leading-relaxed font-light">{f.desc}</p>
+              <p className="text-slate-300 leading-relaxed font-light">{f.desc}</p>
             </div>
           ))}
         </div>
@@ -172,7 +172,7 @@ export default function TrenchTalkPage() {
         <div className="absolute inset-0 bg-orange-500/5 pointer-events-none" />
         <div className="container mx-auto max-w-3xl">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 uppercase tracking-tighter italic">Get Your Saturdays Back.</h2>
-          <p className="text-xl text-slate-400 mb-12 font-light">
+          <p className="text-xl text-slate-300 mb-12 font-light">
             Stop the typing. Start the talking. Join the early access waitlist for Trench Talk.
           </p>
           <div className="flex justify-center mb-16">

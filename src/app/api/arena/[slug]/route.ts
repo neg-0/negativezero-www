@@ -17,7 +17,7 @@ export async function GET(
     }
 
     // Parse painQuotes if it's stored as JSON string (SQLite compatibility)
-    let painQuotes = idea.painQuotes;
+    let painQuotes: any = idea.painQuotes;
     if (typeof painQuotes === 'string') {
       try {
         painQuotes = JSON.parse(painQuotes);

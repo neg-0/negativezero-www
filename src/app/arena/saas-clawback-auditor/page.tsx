@@ -19,7 +19,7 @@ export default function SaasClawbackAuditorPage() {
       </nav>
 
       {/* Hero Section */}
-      <header className="relative pt-32 pb-20 px-4 overflow-hidden border-b border-white/5">
+      <header className="relative pt-32 pb-20 px-4 overflow-hidden border-b border-white/20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(239,68,68,0.05),transparent_50%)] pointer-events-none" />
         <div className="container mx-auto max-w-5xl">
           <div className="mb-8 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-medium uppercase tracking-wider">
@@ -32,14 +32,14 @@ export default function SaasClawbackAuditorPage() {
             REVOKED THAT?" PHONE CALL.
           </h1>
           
-          <p className="text-xl md:text-2xl text-slate-400 max-w-2xl mb-10 leading-relaxed font-light">
+          <p className="text-xl md:text-2xl text-slate-300 max-w-2xl mb-10 leading-relaxed font-light">
             The MSP offboarding tool that finds and kills the Shadow SaaS you didn't know existed. 
             Build a "Kill List" in seconds, not hours.
           </p>
 
           <div className="flex flex-col gap-6">
             <WaitlistForm product={slug} />
-            <p className="text-xs text-slate-500 font-mono italic">
+            <p className="text-xs text-slate-300 font-mono italic">
               "We disable AD, but they still have the Twitter login. This tool found 15 apps we missed in seconds."
             </p>
           </div>
@@ -47,14 +47,14 @@ export default function SaasClawbackAuditorPage() {
       </header>
 
       {/* The Pain Section */}
-      <section className="py-24 px-4 border-b border-white/5">
+      <section className="py-24 px-4 border-b border-white/20">
         <div className="container mx-auto max-w-5xl">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl font-bold text-white mb-6 tracking-tight leading-tight">
                 Offboarding is more than just disabling Active Directory.
               </h2>
-              <p className="text-lg text-slate-400 mb-8 leading-relaxed">
+              <p className="text-lg text-slate-300 mb-8 leading-relaxed">
                 You're terrified of liability because of "stupid mistakes" like a missing a login. 
                 Former employees still have access to Canva, ChatGPT, or the company LinkedIn because someone forgot 
                 they even signed up for it.
@@ -83,7 +83,7 @@ export default function SaasClawbackAuditorPage() {
                 <blockquote className="text-xl italic text-slate-300 leading-snug">
                   "Always double check client offboarding access... missed checklist step... former employee still had VPN access."
                 </blockquote>
-                <div className="mt-4 text-sm text-slate-500 font-mono">
+                <div className="mt-4 text-sm text-slate-300 font-mono">
                   — r/msp
                 </div>
               </div>
@@ -95,7 +95,7 @@ export default function SaasClawbackAuditorPage() {
                 <blockquote className="text-xl italic text-slate-300 leading-snug">
                   "The client asked: 'Why can [Fired Employee] still post on our LinkedIn?' We almost lost the contract over a simple oversight."
                 </blockquote>
-                <div className="mt-4 text-sm text-slate-500 font-mono">
+                <div className="mt-4 text-sm text-slate-300 font-mono">
                   — MSP Service Manager
                 </div>
               </div>
@@ -108,7 +108,7 @@ export default function SaasClawbackAuditorPage() {
       <section className="py-24 px-4 bg-white/[0.01]">
         <div className="container mx-auto max-w-5xl text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">The "Safety Net" for Offboarding.</h2>
-          <p className="text-slate-400">Enterprise tools are too complex for SMB clients. Manual checklists fail. Clawback is the middle ground.</p>
+          <p className="text-slate-300">Enterprise tools are too complex for SMB clients. Manual checklists fail. Clawback is the middle ground.</p>
         </div>
         
         <div className="container mx-auto max-w-5xl grid md:grid-cols-3 gap-8">
@@ -129,10 +129,10 @@ export default function SaasClawbackAuditorPage() {
               desc: "Generate a 'Clean Bill of Health' PDF to show the client exactly which doors you closed."
             }
           ].map((f, i) => (
-            <div key={i} className="p-8 border border-white/5 bg-black/40 hover:border-red-500/30 transition-all group hover:-translate-y-1">
+            <div key={i} className="p-8 border border-white/20 bg-black/40 hover:border-red-500/30 transition-all group hover:-translate-y-1">
               <div className="mb-6 group-hover:scale-110 transition-transform">{f.icon}</div>
               <h3 className="text-xl font-bold text-white mb-3">{f.title}</h3>
-              <p className="text-slate-400 leading-relaxed font-light">{f.desc}</p>
+              <p className="text-slate-300 leading-relaxed font-light">{f.desc}</p>
             </div>
           ))}
         </div>
@@ -145,12 +145,12 @@ export default function SaasClawbackAuditorPage() {
             <div className="bg-red-500/10 border border-red-500/20 p-4 rounded-2xl">
               <ShieldCheck className="w-12 h-12 text-red-500 mx-auto mb-4" />
               <h2 className="text-3xl font-bold text-white mb-2">Liability Protected.</h2>
-              <p className="text-slate-400">Never leave a backdoor open again.</p>
+              <p className="text-slate-300">Never leave a backdoor open again.</p>
             </div>
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Audit an Offboarding (Free)</h2>
-          <p className="text-xl text-slate-400 mb-12 font-light">
+          <p className="text-xl text-slate-300 mb-12 font-light">
             Connect to your client's M365 and find the apps you missed. 
             Join the waitlist for early access.
           </p>

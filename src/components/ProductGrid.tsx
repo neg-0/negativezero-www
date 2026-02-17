@@ -62,33 +62,36 @@ export function ProductGrid() {
             Tools for builders, by builders.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/20 border border-white/20 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
           {products.map((product) => (
             <div 
               key={product.id} 
-              className="group relative bg-black p-8 hover:bg-neutral-900 transition-colors duration-300 flex flex-col h-[400px]"
+              className="group relative bg-black p-8 hover:bg-neutral-900 hover:shadow-[inset_0_0_0_1px_rgba(0,255,136,0.2)] transition-all duration-300 flex flex-col h-[400px]"
             >
               <div className="flex justify-between items-start mb-6">
-                <span className={`text-[10px] uppercase tracking-widest px-2 py-1 border ${
-                  product.status === 'LIVE' ? 'text-green-500 border-green-500/50 bg-green-500/10' : 
-                  product.status === 'ACTIVE' ? 'text-blue-400 border-blue-400/50 bg-blue-400/10' :
-                  'text-neutral-500 border-white/10'
+                <span className={`text-[10px] uppercase tracking-widest px-2 py-1 border font-medium ${
+                  product.status === 'LIVE' ? 'text-green-400 border-green-500/50 bg-green-500/10 shadow-[0_0_10px_rgba(0,255,136,0.2)] animate-pulse' : 
+                  product.status === 'ALPHA' ? 'text-yellow-400 border-yellow-500/50 bg-yellow-500/10' :
+                  product.status === 'BETA' ? 'text-blue-400 border-blue-500/50 bg-blue-500/10' :
+                  product.status === 'BUILDING' ? 'text-orange-400 border-orange-500/50 bg-orange-500/10' :
+                  product.status === 'ACTIVE' ? 'text-purple-400 border-purple-500/50 bg-purple-500/10' :
+                  'text-neutral-400 border-white/20'
                 }`}>
                   {product.status}
                 </span>
-                <ArrowUpRight className="w-5 h-5 text-neutral-600 group-hover:text-white transition-colors" />
+                <ArrowUpRight className="w-5 h-5 text-neutral-400 group-hover:text-green-400 transition-colors" />
               </div>
               
-              <h3 className="text-2xl font-bold tracking-tighter text-white mb-4 group-hover:translate-x-1 transition-transform duration-300">
+              <h3 className="text-2xl font-bold tracking-tighter text-white mb-4 group-hover:translate-x-1 transition-transform duration-300 group-hover:text-green-400">
                 {product.name}
               </h3>
               
-              <p className="text-sm text-neutral-400 leading-relaxed font-mono flex-grow">
+              <p className="text-sm text-neutral-300 leading-relaxed font-mono flex-grow">
                 {product.description}
               </p>
 
-              <div className="mt-8 pt-8 border-t border-white/5 flex justify-between items-end">
-                <span className="text-[10px] uppercase tracking-widest text-neutral-600">
+              <div className="mt-8 pt-8 border-t border-white/10 flex justify-between items-end">
+                <span className="text-[10px] uppercase tracking-widest text-neutral-400 group-hover:text-neutral-300">
                   {product.role}
                 </span>
               </div>

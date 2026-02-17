@@ -34,6 +34,9 @@ export default function Home() {
 
       {/* HERO SECTION */}
       <section className="relative pt-48 pb-32 md:pt-64 md:pb-48 px-6 md:px-12 max-w-7xl mx-auto z-10">
+        {/* HERO BACKGROUND EFFECT */}
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_10%,_var(--tw-gradient-stops))] from-green-900/20 via-black/0 to-black/0 blur-3xl opacity-50 animate-pulse"></div>
+
         <motion.div 
           variants={container}
           initial="hidden"
@@ -41,13 +44,13 @@ export default function Home() {
           className="space-y-12"
         >
           <motion.div variants={item}>
-            <span className="inline-block border border-white/20 px-3 py-1 text-[10px] tracking-[0.3em] uppercase text-neutral-400 bg-black/50 backdrop-blur-sm mb-6">
+            <span className="inline-block border border-green-500/30 px-3 py-1 text-[10px] tracking-[0.3em] uppercase text-green-400 bg-black/50 backdrop-blur-sm mb-6 shadow-[0_0_15px_rgba(0,255,136,0.1)]">
               Architectural Preview v0.1
             </span>
-            <h2 className="text-6xl md:text-9xl font-black tracking-tighter leading-[0.85] uppercase mix-blend-difference mb-8">
+            <h2 className="text-6xl md:text-9xl font-black tracking-tighter leading-[0.85] uppercase text-white mb-8 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
               Structure<br/>Over<br/>Chaos
             </h2>
-            <p className="text-lg md:text-xl text-neutral-400 max-w-2xl leading-relaxed">
+            <p className="text-lg md:text-xl text-neutral-300 max-w-2xl leading-relaxed">
               We deploy autonomous software entities to solve human-scale problems. 
               Efficiency is the only metric. One human, infinite leverage.
             </p>
@@ -55,12 +58,12 @@ export default function Home() {
 
           <motion.div variants={item} className="flex flex-wrap gap-4">
             <Link href="/about">
-              <Button size="lg" className="group text-xs tracking-widest uppercase">
+              <Button size="lg" className="group text-xs tracking-widest uppercase bg-green-500 text-black hover:bg-green-400 border-green-500 font-bold shadow-[0_0_20px_rgba(0,255,136,0.3)] hover:shadow-[0_0_30px_rgba(0,255,136,0.5)] transition-all">
                 Explore Fleet <MoveRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
             <Link href="/about">
-              <Button variant="outline" size="lg" className="text-xs tracking-widest uppercase">
+              <Button variant="outline" size="lg" className="text-xs tracking-widest uppercase border-green-500/30 text-green-400 hover:bg-green-950/30 hover:text-green-300 hover:border-green-500/60 transition-all">
                 Read Manifesto
               </Button>
             </Link>
@@ -74,19 +77,19 @@ export default function Home() {
       </div>
 
       {/* ARENA PREVIEW SECTION */}
-      <section className="py-24 px-6 md:px-12 border-t border-white/10 bg-neutral-900/10 relative overflow-hidden">
+      <section className="py-24 px-6 md:px-12 border-t border-white/20 bg-neutral-900/10 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-green-900/20 via-transparent to-transparent opacity-50"></div>
         <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
-          <h3 className="text-sm tracking-[0.3em] uppercase text-green-500 animate-pulse">Live Experiments</h3>
-          <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase text-white">
+          <h3 className="text-sm tracking-[0.3em] uppercase text-green-400 animate-pulse drop-shadow-[0_0_5px_rgba(0,255,136,0.5)]">Live Experiments</h3>
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]">
             THE ARENA
           </h2>
-          <p className="text-xl md:text-2xl font-light text-neutral-400">
+          <p className="text-xl md:text-2xl font-light text-neutral-300">
             Where ideas prove themselves. Watch live experiments fight for survival in 48-hour sprints.
           </p>
           <div className="pt-8">
             <Link href="/arena">
-              <Button size="lg" variant="outline" className="group text-xs tracking-widest uppercase border-green-500/50 text-green-500 hover:bg-green-500 hover:text-black">
+              <Button size="lg" variant="outline" className="group text-xs tracking-widest uppercase border-green-500/50 text-green-400 hover:bg-green-500 hover:text-black hover:shadow-[0_0_30px_rgba(0,255,136,0.3)] transition-all">
                 Enter the Arena <MoveRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
@@ -95,16 +98,16 @@ export default function Home() {
       </section>
 
       {/* ABOUT / MANIFESTO PREVIEW */}
-      <section className="py-32 px-6 md:px-12 border-t border-white/10 bg-neutral-900/20">
+      <section className="py-32 px-6 md:px-12 border-t border-white/20 bg-neutral-900/20">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h3 className="text-sm tracking-[0.3em] uppercase text-neutral-500">The Mission</h3>
-          <p className="text-2xl md:text-4xl font-light leading-tight text-neutral-200">
+          <h3 className="text-sm tracking-[0.3em] uppercase text-neutral-400">The Mission</h3>
+          <p className="text-2xl md:text-4xl font-light leading-tight text-white drop-shadow-lg">
             "The goal is to maximize impact with minimal effort. We build systems that build systems."
           </p>
           <div className="pt-8">
             <Link 
               href="/about" 
-              className={buttonVariants({ variant: "link", className: "text-neutral-400 hover:text-white uppercase tracking-widest text-xs p-0 h-auto" })}
+              className={buttonVariants({ variant: "link", className: "text-green-400 hover:text-green-300 uppercase tracking-widest text-xs p-0 h-auto underline decoration-green-500/30 underline-offset-4 hover:decoration-green-500 transition-all" })}
             >
               Learn about the AI Army &rarr;
             </Link>

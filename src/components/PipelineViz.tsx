@@ -72,11 +72,11 @@ export function PipelineViz({ counts }: { counts?: any }) {
       <div className="relative mb-16 px-4 md:px-12 overflow-x-auto pb-8 hide-scrollbar">
         <div className="min-w-[800px] flex justify-between items-center relative z-10">
           {/* Connecting Line Background */}
-          <div className="absolute top-8 left-0 right-0 h-1 bg-white/10 -z-10 rounded-full"></div>
+          <div className="absolute top-8 left-0 right-0 h-1 bg-white/20 -z-10 rounded-full"></div>
           
           {/* Active Flow Line */}
           <motion.div 
-            className="absolute top-8 left-0 h-1 bg-green-500 shadow-[0_0_15px_rgba(34,197,94,0.5)] -z-10 rounded-full"
+            className="absolute top-8 left-0 h-1 bg-green-500 shadow-[0_0_15px_rgba(34,197,94,0.8)] -z-10 rounded-full"
             initial={{ width: "0%" }}
             animate={{ width: `${(flowingStage / (stages.length - 1)) * 100}%` }}
             transition={{ duration: 0.5, ease: "linear" }}
@@ -91,12 +91,12 @@ export function PipelineViz({ counts }: { counts?: any }) {
               <div key={stage.id} className="relative flex flex-col items-center group cursor-pointer" onClick={() => setActiveStage(index)}>
                 <motion.div
                   className={`w-16 h-16 rounded-full border-2 flex items-center justify-center bg-black z-20 transition-all duration-300 ${
-                    isActive ? 'border-green-500 scale-110 shadow-[0_0_20px_rgba(34,197,94,0.4)]' : 
-                    isFlowing ? 'border-green-500/50 text-green-500' : 'border-white/10 text-neutral-600'
+                    isActive ? 'border-green-500 scale-110 shadow-[0_0_25px_rgba(34,197,94,0.6)]' : 
+                    isFlowing ? 'border-green-500/80 text-green-400 shadow-[0_0_15px_rgba(34,197,94,0.3)]' : 'border-white/20 text-neutral-400'
                   }`}
                   whileHover={{ scale: 1.1 }}
                 >
-                  <Icon className={`w-6 h-6 ${isActive || isFlowing ? 'text-green-500' : 'text-neutral-600'}`} />
+                  <Icon className={`w-6 h-6 ${isActive || isFlowing ? 'text-green-400' : 'text-neutral-400'}`} />
                 </motion.div>
 
                 {/* Pulse Effect for current flow */}
@@ -105,7 +105,7 @@ export function PipelineViz({ counts }: { counts?: any }) {
                 )}
 
                 <div className="mt-4 text-center">
-                  <span className={`text-[10px] uppercase tracking-widest font-bold block mb-1 ${isActive ? 'text-white' : 'text-neutral-500'}`}>
+                  <span className={`text-[10px] uppercase tracking-widest font-bold block mb-1 ${isActive ? 'text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]' : 'text-neutral-300'}`}>
                     {stage.label}
                   </span>
                 </div>
@@ -124,24 +124,24 @@ export function PipelineViz({ counts }: { counts?: any }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="text-center space-y-4 border border-green-500/20 bg-green-500/5 p-8 rounded-lg backdrop-blur-sm"
+            className="text-center space-y-4 border border-green-500/30 bg-green-500/10 p-8 rounded-lg backdrop-blur-sm shadow-[0_0_40px_rgba(0,255,136,0.15)]"
           >
             <div className="flex justify-center items-center gap-3 mb-2">
-              <span className="text-green-500 font-mono text-sm uppercase tracking-widest">
+              <span className="text-green-400 font-mono text-sm uppercase tracking-widest drop-shadow-[0_0_5px_rgba(0,255,136,0.5)]">
                 Stage {activeStage + 1}: {stages[activeStage].label}
               </span>
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold text-white">
+            <h3 className="text-2xl md:text-3xl font-bold text-white drop-shadow-md">
               {stages[activeStage].desc}
             </h3>
-            <div className="pt-4 flex justify-center gap-8 text-xs uppercase tracking-widest text-neutral-400">
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+            <div className="pt-4 flex justify-center gap-8 text-xs uppercase tracking-widest text-neutral-300">
+              <span className="flex items-center gap-2 text-green-400">
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_5px_rgba(0,255,136,0.8)]"></span>
                 System Active
               </span>
               {/* This stat is static here but we could pass real props */}
-              <span className="text-white border-b border-green-500 pb-0.5">
-                Current Load: {getCount(stages[activeStage].id)}
+              <span className="text-white border-b border-green-500/50 pb-0.5">
+                Current Load: <span className="text-green-400 font-bold">{getCount(stages[activeStage].id)}</span>
               </span>
             </div>
           </motion.div>

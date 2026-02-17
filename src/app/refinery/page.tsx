@@ -80,8 +80,9 @@ export default async function RefineryPage() {
       </section>
 
       {/* PIPELINE VIZ */}
-      <section className="py-12 border-y border-white/5 bg-white/5">
-        <div className="container mx-auto">
+      <section className="py-12 border-y border-white/10 bg-white/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(0,255,136,0.05),transparent)] animate-[shimmer_3s_infinite]"></div>
+        <div className="container mx-auto relative z-10">
           <PipelineViz counts={stats} />
         </div>
       </section>
@@ -89,39 +90,39 @@ export default async function RefineryPage() {
       {/* STATS GRID */}
       <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div className="p-8 border border-white/10 bg-black hover:border-green-500/50 transition-colors group">
-            <Activity className="w-8 h-8 mx-auto mb-4 text-neutral-600 group-hover:text-green-500 transition-colors" />
+          <div className="p-8 border border-white/20 bg-black hover:border-green-500 hover:shadow-[0_0_20px_rgba(0,255,136,0.2)] transition-all duration-300 group">
+            <Activity className="w-8 h-8 mx-auto mb-4 text-neutral-400 group-hover:text-green-500 transition-colors" />
             <div className="text-4xl font-bold text-white mb-2">{stats.total}</div>
-            <div className="text-[10px] uppercase tracking-widest text-neutral-500">Total Ideas Processed</div>
+            <div className="text-[10px] uppercase tracking-widest text-neutral-400 group-hover:text-neutral-300">Total Ideas Processed</div>
           </div>
-          <div className="p-8 border border-white/10 bg-black hover:border-green-500/50 transition-colors group">
-            <Cpu className="w-8 h-8 mx-auto mb-4 text-neutral-600 group-hover:text-green-500 transition-colors" />
-            <div className="text-4xl font-bold text-white mb-2">{stats.sprint}</div>
-            <div className="text-[10px] uppercase tracking-widest text-neutral-500">Currently Building</div>
+          <div className="p-8 border border-white/20 bg-black hover:border-green-500 hover:shadow-[0_0_20px_rgba(0,255,136,0.2)] transition-all duration-300 group">
+            <Cpu className="w-8 h-8 mx-auto mb-4 text-green-500 group-hover:scale-110 transition-transform" />
+            <div className="text-4xl font-bold text-green-400 mb-2 drop-shadow-[0_0_10px_rgba(0,255,136,0.5)]">{stats.sprint}</div>
+            <div className="text-[10px] uppercase tracking-widest text-neutral-400 group-hover:text-neutral-300">Currently Building</div>
           </div>
-          <div className="p-8 border border-white/10 bg-black hover:border-green-500/50 transition-colors group">
-            <Database className="w-8 h-8 mx-auto mb-4 text-neutral-600 group-hover:text-green-500 transition-colors" />
-            <div className="text-4xl font-bold text-white mb-2">{stats.verdict}</div>
-            <div className="text-[10px] uppercase tracking-widest text-neutral-500">Graduated Products</div>
+          <div className="p-8 border border-white/20 bg-black hover:border-blue-500 hover:shadow-[0_0_20px_rgba(0,136,255,0.2)] transition-all duration-300 group">
+            <Database className="w-8 h-8 mx-auto mb-4 text-blue-500 group-hover:scale-110 transition-transform" />
+            <div className="text-4xl font-bold text-blue-400 mb-2 drop-shadow-[0_0_10px_rgba(0,136,255,0.5)]">{stats.verdict}</div>
+            <div className="text-[10px] uppercase tracking-widest text-neutral-400 group-hover:text-neutral-300">Graduated Products</div>
           </div>
         </div>
       </section>
 
       {/* CTA SECTION */}
-      <section className="py-32 text-center border-t border-white/10 relative overflow-hidden">
+      <section className="py-32 text-center border-t border-white/20 relative overflow-hidden">
         <div className="absolute inset-0 bg-green-900/10 opacity-20"></div>
         <div className="relative z-10 max-w-2xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-8 text-white">
             Want to see what survived?
           </h2>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/arena">
-              <Button size="lg" className="bg-white text-black hover:bg-neutral-200">
+              <Button size="lg" className="bg-green-500 text-black hover:bg-green-400 font-bold border-green-500 shadow-[0_0_20px_rgba(0,255,136,0.3)] hover:shadow-[0_0_30px_rgba(0,255,136,0.5)] transition-all">
                 Enter the Arena <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </Link>
             <Link href="https://twitter.com/negativezeroinc" target="_blank">
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" className="border-white/20 hover:bg-white/10 hover:border-white/40">
                 Submit an Idea
               </Button>
             </Link>

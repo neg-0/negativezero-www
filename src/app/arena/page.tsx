@@ -14,17 +14,17 @@ export default async function ArenaPage() {
     <div className="min-h-screen bg-black text-white selection:bg-green-500/30 font-sans">
       <div className="container mx-auto px-4 py-32 max-w-6xl">
         <header className="mb-24 relative">
-          <div className="absolute top-0 left-0 w-32 h-1 bg-green-500 mb-8" />
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-white/50">
+          <div className="absolute top-0 left-0 w-32 h-1 bg-green-500 mb-8 shadow-[0_0_20px_rgba(0,255,136,0.8)]" />
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-neutral-400 drop-shadow-[0_0_30px_rgba(255,255,255,0.1)]">
             ARENA
           </h1>
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 border-t border-white/10 pt-8">
-            <p className="text-xl text-white/60 max-w-xl font-light leading-relaxed">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 border-t border-white/20 pt-8">
+            <p className="text-xl text-neutral-300 max-w-xl font-light leading-relaxed">
               The proving ground for new ideas. 48-hour sprints to validate or kill.
               Survival depends on your interest.
             </p>
-            <div className="font-mono text-xs text-white/30 uppercase tracking-widest text-right">
-              // CURRENT_STATUS: ACTIVE<br/>
+            <div className="font-mono text-xs text-neutral-400 uppercase tracking-widest text-right">
+              // CURRENT_STATUS: <span className="text-green-400 animate-pulse">ACTIVE</span><br/>
               // SYSTEM_ID: NEG0-DEV
             </div>
           </div>
@@ -48,13 +48,13 @@ export default async function ArenaPage() {
             ))}
           </div>
         ) : (
-          <div className="border border-white/10 bg-white/5 p-12 text-center rounded-lg">
-            <h3 className="text-2xl font-bold text-white/40 mb-2">No Active Experiments</h3>
-            <p className="text-white/20 font-mono text-sm">Check back soon for the next drop.</p>
+          <div className="border border-white/20 bg-white/5 p-12 text-center rounded-lg shadow-[inset_0_0_20px_rgba(255,255,255,0.05)]">
+            <h3 className="text-2xl font-bold text-neutral-300 mb-2">No Active Experiments</h3>
+            <p className="text-neutral-500 font-mono text-sm">Check back soon for the next drop.</p>
           </div>
         )}
         
-        <footer className="mt-32 pt-12 border-t border-white/10 flex justify-between text-xs font-mono text-white/30">
+        <footer className="mt-32 pt-12 border-t border-white/20 flex justify-between text-xs font-mono text-neutral-500">
           <Link href="/" className="hover:text-white transition-colors">← RETURN_TO_BASE</Link>
           <span>NEGATIVE ZERO INC.</span>
         </footer>
