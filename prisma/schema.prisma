@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider  = "postgresql"
+  provider = "sqlite"
 }
 
 model WaitlistEntry {
@@ -27,7 +27,7 @@ model ArenaIdea {
   title       String
   tagline     String
   status      String   @default("active") // "active", "passed", "failed", "graduated"
-  painQuotes  Json     // Changed to Json for Postgres compatibility (mapped to JSONB)
+  painQuotes  String   // SQLite doesn't have Json type, using String to store JSON string
   valueProp   String?  // The "How it works" or main value proposition text
   sprintStart DateTime?
   sprintEnd   DateTime?
@@ -41,7 +41,7 @@ model TrackingEvent {
   id        String   @id @default(uuid())
   product   String
   event     String   // "page_view", "cta_click", "waitlist_signup", "share"
-  metadata  Json?    // Changed to Json
+  metadata  String?  // SQLite doesn't have Json type
   createdAt DateTime @default(now())
 
   @@index([product, event])
