@@ -45,3 +45,9 @@ next-env.d.ts
 dev-data.json
 dev.db
 .env
+
+dev.db
+dev-data.json
+next-dev.log
+.env
+.env.local
