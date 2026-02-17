@@ -1,5 +1,8 @@
+"use client";
+
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 const products = [
   {
@@ -52,6 +55,67 @@ const products = [
   }
 ];
 
+function getProductStyles(id: string, status: string) {
+  // Base styles
+  let borderClass = "border-white/20";
+  let hoverShadow = "hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]";
+  let textAccent = "group-hover:text-white";
+
+  switch (id) {
+    case "shiplog":
+      borderClass = "border-l-4 border-l-emerald-500 border-y border-r border-white/20";
+      hoverShadow = "hover:shadow-[0_0_30px_rgba(16,185,129,0.15)]";
+      textAccent = "group-hover:text-emerald-400";
+      break;
+    case "armourmail":
+      borderClass = "border-t-4 border-t-red-500 border-x border-b border-white/20";
+      hoverShadow = "hover:shadow-[0_0_30px_rgba(239,68,68,0.15)]";
+      textAccent = "group-hover:text-red-400";
+      break;
+    case "chocks":
+      borderClass = "border-t-4 border-t-blue-500 border-x border-b border-white/20";
+      hoverShadow = "hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]";
+      textAccent = "group-hover:text-blue-400";
+      break;
+    case "glasswall":
+      borderClass = "border-t-4 border-t-purple-500 border-x border-b border-white/20";
+      hoverShadow = "hover:shadow-[0_0_30px_rgba(168,85,247,0.15)]";
+      textAccent = "group-hover:text-purple-400";
+      break;
+    case "anti-cpq":
+      borderClass = "border-t-4 border-t-amber-500 border-x border-b border-white/20";
+      hoverShadow = "hover:shadow-[0_0_30px_rgba(245,158,11,0.15)]";
+      textAccent = "group-hover:text-amber-400";
+      break;
+    case "refinery":
+      borderClass = "border-t-4 border-t-cyan-500 border-x border-b border-white/20";
+      hoverShadow = "hover:shadow-[0_0_30px_rgba(6,182,212,0.15)]";
+      textAccent = "group-hover:text-cyan-400";
+      break;
+    default:
+      borderClass = "border border-white/20";
+  }
+
+  return { borderClass, hoverShadow, textAccent };
+}
+
+function getStatusBadgeStyles(status: string) {
+  switch (status) {
+    case "LIVE":
+      return "bg-emerald-500 text-black font-bold border-none shadow-[0_0_10px_rgba(16,185,129,0.4)]";
+    case "ALPHA":
+      return "bg-red-500/20 text-red-400 border-red-500/50";
+    case "BETA":
+      return "bg-blue-500/20 text-blue-400 border-blue-500/50";
+    case "BUILDING":
+      return "bg-amber-500/20 text-amber-400 border-amber-500/50";
+    case "ACTIVE":
+      return "bg-cyan-500/20 text-cyan-400 border-cyan-500/50";
+    default:
+      return "text-neutral-400 border-white/20";
+  }
+}
+
 export function ProductGrid() {
   return (
     <section className="w-full py-24 border-t border-white/10 bg-black">
@@ -62,45 +126,50 @@ export function ProductGrid() {
             Tools for builders, by builders.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/20 border border-white/20 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
-          {products.map((product) => (
-            <div 
-              key={product.id} 
-              className="group relative bg-black p-8 hover:bg-neutral-900 hover:shadow-[inset_0_0_0_1px_rgba(0,255,136,0.2)] transition-all duration-300 flex flex-col h-[400px]"
-            >
-              <div className="flex justify-between items-start mb-6">
-                <span className={`text-[10px] uppercase tracking-widest px-2 py-1 border font-medium ${
-                  product.status === 'LIVE' ? 'text-green-400 border-green-500/50 bg-green-500/10 shadow-[0_0_10px_rgba(0,255,136,0.2)] animate-pulse' : 
-                  product.status === 'ALPHA' ? 'text-yellow-400 border-yellow-500/50 bg-yellow-500/10' :
-                  product.status === 'BETA' ? 'text-blue-400 border-blue-500/50 bg-blue-500/10' :
-                  product.status === 'BUILDING' ? 'text-orange-400 border-orange-500/50 bg-orange-500/10' :
-                  product.status === 'ACTIVE' ? 'text-purple-400 border-purple-500/50 bg-purple-500/10' :
-                  'text-neutral-400 border-white/20'
-                }`}>
-                  {product.status}
-                </span>
-                <ArrowUpRight className="w-5 h-5 text-neutral-400 group-hover:text-green-400 transition-colors" />
-              </div>
-              
-              <h3 className="text-2xl font-bold tracking-tighter text-white mb-4 group-hover:translate-x-1 transition-transform duration-300 group-hover:text-green-400">
-                {product.name}
-              </h3>
-              
-              <p className="text-sm text-neutral-300 leading-relaxed font-mono flex-grow">
-                {product.description}
-              </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {products.map((product) => {
+            const { borderClass, hoverShadow, textAccent } = getProductStyles(product.id, product.status);
+            const statusStyles = getStatusBadgeStyles(product.status);
+            
+            return (
+              <div 
+                key={product.id} 
+                className={cn(
+                  "group relative bg-black p-8 transition-all duration-300 flex flex-col h-[400px]",
+                  borderClass,
+                  hoverShadow
+                )}
+              >
+                <div className="flex justify-between items-start mb-6">
+                  <span className={cn(
+                    "text-[10px] uppercase tracking-widest px-2 py-1 border font-medium transition-all",
+                    statusStyles
+                  )}>
+                    {product.status}
+                  </span>
+                  <ArrowUpRight className={cn("w-5 h-5 text-neutral-500 transition-colors", textAccent)} />
+                </div>
+                
+                <h3 className={cn("text-2xl font-bold tracking-tighter text-white mb-4 transition-transform duration-300 group-hover:translate-x-1", textAccent)}>
+                  {product.name}
+                </h3>
+                
+                <p className="text-sm text-neutral-400 leading-relaxed font-mono flex-grow group-hover:text-neutral-300 transition-colors">
+                  {product.description}
+                </p>
 
-              <div className="mt-8 pt-8 border-t border-white/10 flex justify-between items-end">
-                <span className="text-[10px] uppercase tracking-widest text-neutral-400 group-hover:text-neutral-300">
-                  {product.role}
-                </span>
-              </div>
+                <div className="mt-8 pt-8 border-t border-white/10 flex justify-between items-end">
+                  <span className="text-[10px] uppercase tracking-widest text-neutral-400 group-hover:text-neutral-300 transition-colors">
+                    {product.role}
+                  </span>
+                </div>
 
-              <Link href={product.href} className="absolute inset-0 z-10 focus:outline-none focus:ring-2 focus:ring-white/20">
-                <span className="sr-only">View {product.name}</span>
-              </Link>
-            </div>
-          ))}
+                <Link href={product.href} className="absolute inset-0 z-10 focus:outline-none focus:ring-2 focus:ring-emerald-500/50">
+                  <span className="sr-only">View {product.name}</span>
+                </Link>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

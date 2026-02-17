@@ -72,11 +72,11 @@ export function PipelineViz({ counts }: { counts?: any }) {
       <div className="relative mb-16 px-4 md:px-12 overflow-x-auto pb-8 hide-scrollbar">
         <div className="min-w-[800px] flex justify-between items-center relative z-10">
           {/* Connecting Line Background */}
-          <div className="absolute top-8 left-0 right-0 h-1 bg-white/20 -z-10 rounded-full"></div>
+          <div className="absolute top-8 left-0 right-0 h-1 bg-emerald-500/30 -z-10 rounded-full"></div>
           
           {/* Active Flow Line */}
           <motion.div 
-            className="absolute top-8 left-0 h-1 bg-green-500 shadow-[0_0_15px_rgba(34,197,94,0.8)] -z-10 rounded-full"
+            className="absolute top-8 left-0 h-1 bg-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.8)] -z-10 rounded-full"
             initial={{ width: "0%" }}
             animate={{ width: `${(flowingStage / (stages.length - 1)) * 100}%` }}
             transition={{ duration: 0.5, ease: "linear" }}
@@ -90,13 +90,14 @@ export function PipelineViz({ counts }: { counts?: any }) {
             return (
               <div key={stage.id} className="relative flex flex-col items-center group cursor-pointer" onClick={() => setActiveStage(index)}>
                 <motion.div
-                  className={`w-16 h-16 rounded-full border-2 flex items-center justify-center bg-black z-20 transition-all duration-300 ${
-                    isActive ? 'border-green-500 scale-110 shadow-[0_0_25px_rgba(34,197,94,0.6)]' : 
-                    isFlowing ? 'border-green-500/80 text-green-400 shadow-[0_0_15px_rgba(34,197,94,0.3)]' : 'border-white/20 text-neutral-400'
+                  className={`w-16 h-16 rounded-full border-2 flex items-center justify-center z-20 transition-all duration-300 ${
+                    isActive ? 'border-emerald-500 bg-emerald-950/50 scale-110 shadow-[0_0_25px_rgba(16,185,129,0.6)] text-emerald-400' : 
+                    isFlowing ? 'border-emerald-500/80 bg-emerald-950/30 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.3)]' : 
+                    'border-emerald-500/40 bg-black text-emerald-500/50 shadow-[0_0_10px_rgba(16,185,129,0.1)]'
                   }`}
                   whileHover={{ scale: 1.1 }}
                 >
-                  <Icon className={`w-6 h-6 ${isActive || isFlowing ? 'text-green-400' : 'text-neutral-400'}`} />
+                  <Icon className={`w-6 h-6 ${isActive || isFlowing ? 'text-emerald-400' : 'text-emerald-500/50'}`} />
                 </motion.div>
 
                 {/* Pulse Effect for current flow */}

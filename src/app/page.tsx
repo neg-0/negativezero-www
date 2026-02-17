@@ -44,26 +44,28 @@ export default function Home() {
           className="space-y-12"
         >
           <motion.div variants={item}>
-            <span className="inline-block border border-green-500/30 px-3 py-1 text-[10px] tracking-[0.3em] uppercase text-green-400 bg-black/50 backdrop-blur-sm mb-6 shadow-[0_0_15px_rgba(0,255,136,0.1)]">
+            <div className="absolute -top-20 -right-20 w-96 h-96 bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none mix-blend-screen animate-pulse"></div>
+            
+            <span className="inline-block border border-emerald-500/50 px-3 py-1 text-[10px] tracking-[0.3em] uppercase text-emerald-400 bg-black/50 backdrop-blur-sm mb-6 shadow-[0_0_15px_rgba(16,185,129,0.2)] bg-gradient-to-r from-emerald-900/20 to-transparent">
               Architectural Preview v0.1
             </span>
-            <h2 className="text-6xl md:text-9xl font-black tracking-tighter leading-[0.85] uppercase text-white mb-8 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+            <h2 className="text-6xl md:text-9xl font-black tracking-tighter leading-[0.85] uppercase text-transparent bg-clip-text bg-gradient-to-r from-white via-green-200 to-emerald-400 mb-8 drop-shadow-[0_0_25px_rgba(255,255,255,0.15)] relative z-10">
               Structure<br/>Over<br/>Chaos
             </h2>
-            <p className="text-lg md:text-xl text-neutral-300 max-w-2xl leading-relaxed">
+            <p className="text-lg md:text-xl text-neutral-300 max-w-2xl leading-relaxed relative z-10">
               We deploy autonomous software entities to solve human-scale problems. 
               Efficiency is the only metric. One human, infinite leverage.
             </p>
           </motion.div>
 
-          <motion.div variants={item} className="flex flex-wrap gap-4">
+          <motion.div variants={item} className="flex flex-wrap gap-4 relative z-10">
             <Link href="/about">
-              <Button size="lg" className="group text-xs tracking-widest uppercase bg-green-500 text-black hover:bg-green-400 border-green-500 font-bold shadow-[0_0_20px_rgba(0,255,136,0.3)] hover:shadow-[0_0_30px_rgba(0,255,136,0.5)] transition-all">
+              <Button size="lg" className="group text-xs tracking-widest uppercase bg-emerald-500 hover:bg-emerald-400 text-black font-bold shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:shadow-[0_0_30px_rgba(16,185,129,0.6)] transition-all border-none">
                 Explore Fleet <MoveRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
             <Link href="/about">
-              <Button variant="outline" size="lg" className="text-xs tracking-widest uppercase border-green-500/30 text-green-400 hover:bg-green-950/30 hover:text-green-300 hover:border-green-500/60 transition-all">
+              <Button variant="outline" size="lg" className="text-xs tracking-widest uppercase border-emerald-500/50 text-emerald-400 hover:border-emerald-400 hover:bg-emerald-950/30 hover:text-emerald-300 transition-all shadow-[0_0_10px_rgba(16,185,129,0.1)]">
                 Read Manifesto
               </Button>
             </Link>
