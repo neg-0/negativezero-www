@@ -32,7 +32,7 @@ export default async function ArenaPage() {
 
         {ideas.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {ideas.map((idea) => (
+            {ideas.map((idea: any) => (
               <ProductCard 
                 key={idea.id} 
                 id={idea.id}

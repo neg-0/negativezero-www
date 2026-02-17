@@ -33,7 +33,7 @@ export async function ArenaFooter({ currentSlug }: ArenaFooterProps) {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {ideas.map((idea) => (
+          {ideas.map((idea: any) => (
             <ProductCard 
               key={idea.id} 
               id={idea.id}
