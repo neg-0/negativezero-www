@@ -111,7 +111,7 @@ export default function TradeLitePage() {
                    <Quote className="w-8 h-8 text-blue-500" />
                 </div>
                 <blockquote className="text-xl italic text-slate-300 leading-relaxed mb-4 font-light">
-                  "Features are overkill for small shops (<10 techs)."
+                  &ldquo;Features are overkill for small shops (&lt;10 techs).&rdquo;
                 </blockquote>
                 <div className="text-sm text-slate-500 font-mono">
                   — HVAC Owner

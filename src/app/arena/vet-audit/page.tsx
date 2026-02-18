@@ -53,7 +53,7 @@ export default function VetAuditPage() {
           </p>
 
           <div className="flex flex-col gap-8">
-            <WaitlistForm product={slug} buttonText="Stop the Leak" />
+            <WaitlistForm product={slug} />
             <div className="flex flex-wrap items-center gap-6 text-sm text-slate-500 font-mono">
               <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-emerald-500/50" /> AVIMARK READY</span>
               <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-emerald-500/50" /> ZERO-CLICK SETUP</span>
@@ -178,7 +178,7 @@ export default function VetAuditPage() {
             and turn your practice notes into a secondary profit center.
           </p>
           <div className="flex justify-center mb-24">
-            <WaitlistForm product={slug} buttonText="Stop the Leak" />
+            <WaitlistForm product={slug} />
           </div>
           
           <ArenaFooter currentSlug={slug} />
