@@ -8,9 +8,9 @@ const products = [
   {
     id: "shiplog",
     name: "ShipLog",
-    role: "DevOps Dashboard",
+    role: "Automated Changelogs",
     status: "LIVE",
-    description: "AI-powered changelogs from your Git history. Beautiful release notes your users actually read.",
+    description: "AI-powered changelogs that write themselves. Connect your GitHub repo and get beautiful, human-readable release notes — automatically.",
     href: "https://shiplog.io" 
   },
   {
@@ -162,6 +162,11 @@ export function ProductGrid() {
                   <span className="text-[10px] uppercase tracking-widest text-neutral-400 group-hover:text-neutral-300 transition-colors">
                     {product.role}
                   </span>
+                  {product.id === "shiplog" && (
+                    <span className="text-[10px] uppercase tracking-widest text-emerald-400 font-bold">
+                      Visit shiplog.io &rarr;
+                    </span>
+                  )}
                 </div>
 
                 <Link href={product.href} className="absolute inset-0 z-10 focus:outline-none focus:ring-2 focus:ring-emerald-500/50">
