@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { clsx } from "clsx";
 
 export default function SprayDayPage() {
@@ -29,9 +30,7 @@ export default function SprayDayPage() {
       <nav className="fixed top-0 w-full z-50 bg-[#FDFBF7]/90 backdrop-blur-md border-b border-[#E7E5E4]">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-[#1C1917] text-white flex items-center justify-center font-black rounded-sm">
-              V
-            </div>
+            <Image src="/arena/vector-logo.png" alt="Vector" width={32} height={32} />
             <span className="font-bold tracking-tight text-xl">VECTOR</span>
           </div>
           <Link 
@@ -281,9 +280,7 @@ export default function SprayDayPage() {
       {/* FOOTER */}
       <footer className="bg-[#FDFBF7] py-12 border-t border-[#E7E5E4] text-center">
         <div className="flex flex-col items-center gap-6">
-          <div className="w-8 h-8 bg-[#1C1917] text-white flex items-center justify-center font-black rounded-sm">
-            V
-          </div>
+          <Image src="/arena/vector-logo.png" alt="Vector" width={32} height={32} />
           <div className="flex items-center gap-6 text-sm text-stone-500 font-medium">
             <Link href="/arena" className="hover:text-[#1C1917] transition-colors">Other Products</Link>
             <Link href="/" className="hover:text-[#1C1917] transition-colors">Negative Zero</Link>
