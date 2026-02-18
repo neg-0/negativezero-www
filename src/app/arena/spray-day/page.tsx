@@ -241,7 +241,33 @@ export default function SprayDayPage() {
             </p>
             
             <div className="bg-[#FDFBF7] p-8 rounded-xl border border-stone-200 shadow-lg">
-              <WaitlistForm product={slug} />
+              <WaitlistForm 
+                product={slug} 
+                theme={{
+                  inputBg: "bg-stone-100",
+                  inputBorder: "border-stone-300",
+                  inputText: "text-stone-900",
+                  placeholder: "Your email address",
+                  placeholderColor: "placeholder-stone-400",
+                  focusBorder: "focus:border-amber-500",
+                  focusBg: "focus:bg-white",
+                  buttonBg: "bg-amber-600",
+                  buttonHover: "hover:bg-amber-700",
+                  buttonText: "text-white",
+                  buttonLabel: "Get Early Access",
+                  loadingLabel: "Joining...",
+                  successBg: "bg-amber-50",
+                  successBorder: "border-amber-200",
+                  successTitle: "You're in!",
+                  successTitleColor: "text-amber-800",
+                  successText: "We'll email you when Vector launches.",
+                  successTextColor: "text-amber-600",
+                  footerText: "No spam. Unsubscribe anytime.",
+                  footerColor: "text-stone-400",
+                  font: "font-sans",
+                  rounded: "rounded-lg",
+                }}
+              />
               <div className="mt-6 flex items-center justify-center gap-6 text-xs text-stone-400 font-bold uppercase tracking-wider">
                  <span><CheckCircle2 size={12} className="inline mr-1" /> No Spam</span>
                  <span><CheckCircle2 size={12} className="inline mr-1" /> Unsub Anytime</span>
