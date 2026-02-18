@@ -159,12 +159,13 @@ export function ProductGrid() {
                 </p>
 
                 <div className="mt-8 pt-8 border-t border-white/10 flex justify-between items-end">
-                  <span className="text-[10px] uppercase tracking-widest text-neutral-400 group-hover:text-neutral-300 transition-colors">
-                    {product.role}
-                  </span>
-                  {product.id === "shiplog" && (
+                  {product.id === "shiplog" ? (
                     <span className="text-[10px] uppercase tracking-widest text-emerald-400 font-bold">
                       Visit shiplog.io &rarr;
+                    </span>
+                  ) : (
+                    <span className="text-[10px] uppercase tracking-widest text-neutral-400 group-hover:text-neutral-300 transition-colors">
+                      {product.role}
                     </span>
                   )}
                 </div>
