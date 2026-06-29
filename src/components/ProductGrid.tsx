@@ -11,7 +11,15 @@ const products = [
     role: "Automated Changelogs",
     status: "LIVE",
     description: "AI-powered changelogs that write themselves. Connect your GitHub repo and get beautiful, human-readable release notes — automatically.",
-    href: "https://shiplog.io" 
+    href: "https://shiplog.io"
+  },
+  {
+    id: "siteswap",
+    name: "SiteSwap",
+    role: "Websites for Trades",
+    status: "LIVE",
+    description: "Done-for-you websites for trade businesses. We build a custom site, you see a live preview before paying a cent, and we host & manage it. Find us by phone or text, too.",
+    href: "https://siteswap.io"
   },
   {
     id: "armourmail",
@@ -55,17 +63,25 @@ const products = [
   }
 ];
 
-function getProductStyles(id: string, status: string) {
+function getProductStyles(id: string) {
   // Base styles
   let borderClass = "border-white/20";
   let hoverShadow = "hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]";
   let textAccent = "group-hover:text-white";
+  let visitAccent = "text-neutral-400";
 
   switch (id) {
     case "shiplog":
       borderClass = "border-l-4 border-l-emerald-500 border-y border-r border-white/20";
       hoverShadow = "hover:shadow-[0_0_30px_rgba(16,185,129,0.15)]";
       textAccent = "group-hover:text-emerald-400";
+      visitAccent = "text-emerald-400";
+      break;
+    case "siteswap":
+      borderClass = "border-l-4 border-l-orange-500 border-y border-r border-white/20";
+      hoverShadow = "hover:shadow-[0_0_30px_rgba(249,115,22,0.15)]";
+      textAccent = "group-hover:text-orange-400";
+      visitAccent = "text-orange-400";
       break;
     case "armourmail":
       borderClass = "border-t-4 border-t-red-500 border-x border-b border-white/20";
@@ -96,7 +112,7 @@ function getProductStyles(id: string, status: string) {
       borderClass = "border border-white/20";
   }
 
-  return { borderClass, hoverShadow, textAccent };
+  return { borderClass, hoverShadow, textAccent, visitAccent };
 }
 
 function getStatusBadgeStyles(status: string) {
@@ -128,8 +144,10 @@ export function ProductGrid() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map((product) => {
-            const { borderClass, hoverShadow, textAccent } = getProductStyles(product.id, product.status);
+            const { borderClass, hoverShadow, textAccent, visitAccent } = getProductStyles(product.id);
             const statusStyles = getStatusBadgeStyles(product.status);
+            const isExternal = product.href.startsWith("http");
+            const visitHost = isExternal ? product.href.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "") : "";
             
             return (
               <div 
@@ -159,9 +177,9 @@ export function ProductGrid() {
                 </p>
 
                 <div className="mt-8 pt-8 border-t border-white/10 flex justify-between items-end">
-                  {product.id === "shiplog" ? (
-                    <span className="text-[10px] uppercase tracking-widest text-emerald-400 font-bold">
-                      Visit shiplog.io &rarr;
+                  {isExternal ? (
+                    <span className={cn("text-[10px] uppercase tracking-widest font-bold", visitAccent)}>
+                      Visit {visitHost} &rarr;
                     </span>
                   ) : (
                     <span className="text-[10px] uppercase tracking-widest text-neutral-400 group-hover:text-neutral-300 transition-colors">
