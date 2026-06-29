@@ -11,6 +11,7 @@ export function Footer() {
       </div>
       <div className="flex gap-8">
         <Link href="https://shiplog.io" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors">ShipLog</Link>
+        <Link href="https://siteswap.io" target="_blank" rel="noopener noreferrer" className="hover:text-orange-400 transition-colors">SiteSwap</Link>
         <Link href="/arena" className="hover:text-white transition-colors">Arena</Link>
         <Link href="https://x.com/negativezeroinc" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Twitter</Link>
         <Link href="https://github.com/neg-0" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</Link>
